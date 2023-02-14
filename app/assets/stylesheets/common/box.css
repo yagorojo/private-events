@@ -1,0 +1,33 @@
+.box {
+  padding: 2rem;
+  border: 1px solid #2e374d1a;
+
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 8px;
+  text-decoration: none;
+  color: #000;
+}
+
+.box:hover {
+  transition: 200ms;
+  border: 1px solid rgba(46,55,77,.3);
+  cursor: pointer;
+}
+
+.box-location, .box-desc, h3 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.box-desc {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.box-date {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray);
+}

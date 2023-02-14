@@ -1,0 +1,14 @@
+<%= link_to event, class: "box" do %>
+  <h3>
+    <%= event.name %>
+  </h3>
+  <div class="box-date">
+    <%= event.date.strftime("%d of %B, %Y") %>
+  </div>
+  <p class="box-desc">
+    <%= event.description %>
+  </p>
+  <div class="box-location">
+    <%= event.location %>
+  </div>
+<% end %>  

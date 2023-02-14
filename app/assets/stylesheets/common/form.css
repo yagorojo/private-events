@@ -1,0 +1,56 @@
+article {
+  padding: 40px;
+}
+
+hgroup {
+  padding-bottom: 28px;
+}
+
+.field {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid #e1e6eb;
+}
+
+.actions input, .event-buttons button {
+  border-radius: 4px;
+  font-size: 1rem; 
+  border: none;
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.actions input {
+  padding: 15px;
+  width: 100%;
+}
+
+.actions input:hover, .event-buttons button:hover {
+  background-color: var(--dark-blue);
+  cursor: pointer;
+}
+
+.actions {
+  padding-bottom: 12px;
+}
+
+.form-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.form-links a {
+  color: var(--gray);
+}
+
+.form-links a:hover {
+  color: #000;
+}
+
+.field-box {
+  padding-bottom: 20px;
+}

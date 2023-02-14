@@ -1,0 +1,17 @@
+<main class="container">
+  <%# Created Events %>
+  <section>
+    <p class="title"><%= @user.username %>'s Events.</p>
+    <div class="columns">
+      <%= render partial: 'events/event', collection: @user.events %>
+    </div>
+  </section>
+
+  <%# Attending Events %>
+  <section>
+    <p class="title">Attending Events.</p>
+    <div class="columns">
+      <%= render partial: 'events/event', collection: @attendance %>
+    </div>
+  </section>
+</main>

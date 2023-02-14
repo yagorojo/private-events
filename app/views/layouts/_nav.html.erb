@@ -1,0 +1,27 @@
+<nav class="container-fluid">
+  <ul>
+    <li>
+      <%= link_to "Private Events", "/" %>
+    </li>
+  </ul>
+  <ul>  
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to "Profile", user_path(id: current_user.id) %>
+      </li>
+      <li>
+        <%= link_to "New Event", new_event_path %>
+      </li>
+      <li class="nav-logout">
+        <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "Log in", new_user_session_path %>
+      </li>
+      <li>
+        <%= link_to "Register", new_user_registration_path %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

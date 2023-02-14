@@ -1,5 +1,23 @@
-<h2>Events</h2>
+<main class="container">
 
-<% @events.each do |event| %>
-  <%= @event.name %>
-<% end %>
+  <%# Upcoming events %>
+  <section>
+    <p class="title">Upcoming events</p>
+
+    <div class="columns">
+      <%= render partial: 'event', collection: @next_events %>
+    </div>
+  </section>
+
+  <%# Past events %>
+  <section>
+    <p class="title">Past events</p>
+
+    <div class="columns">
+      <%= render partial: 'event', collection: @past_events %>
+    </div>
+  </section>
+</main>
+
+<%# Foto de <a href="https://unsplash.com/@marcelalaskoski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Marcela Laskoski</a> en <a href="https://unsplash.com/es/fotos/YrtFlrLo2DQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> %>
+  

@@ -1,0 +1,42 @@
+<main class="container">
+  <section>
+    <div class="event-header">
+      <h1><%= @event.name %></h1>
+      <div class="event-buttons">
+        <% if @event.creator === current_user %>
+          <%= 
+            button_to "Delete", 
+            event_path, 
+            params: { :event_id => @event.id }, 
+            method: :delete
+          %>
+        <% end %>
+        <% if !current_user.nil? && current_user.attendance.exists?(attended_event_id: @event.id) %>
+          <%= 
+            button_to "Disattend", 
+            attendance_path,
+            params: { :event_id => @event.id }, 
+            method: :delete
+          %>
+        <% else %>
+          <%= 
+            button_to "Attend", 
+            attendances_path, 
+            params: { :event_id => @event.id }, 
+            method: :post
+          %>
+        <% end %>
+      </div>
+    </div>
+    <p class="event-desc">
+      Created by 
+        <%= link_to @event.creator.username, user_path(id: @event.creator.id) %>.
+    </p>
+    <div class="event-data">
+      <div><%= @event.date.strftime("%d of %B, %Y") %></div>
+      <div><%= @event.location %></div>
+    </div>
+    <hr/>
+    <p><%= @event.description %></p>
+  </section>
+</main>

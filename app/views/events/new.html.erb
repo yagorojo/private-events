@@ -1,0 +1,14 @@
+<main class="container centered">
+  <section>
+    <h2 class="title">New event</h2>
+    <%= form_with model: @event do |form| %>
+      <%= form.text_field :name, placeholder: "Title", class: "field" %>
+      <%= form.text_area :description, placeholder: "Description", class: "field" %>
+      <%= form.text_field :location, placeholder: "Location", class: "field" %>
+      <%= form.date_field :date, class: "field" %>
+      <div class="actions">
+        <%= form.submit "Create" %>
+      </div>
+    <% end %>
+  </section>
+</main>
