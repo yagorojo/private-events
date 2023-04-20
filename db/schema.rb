@@ -11,11 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_01_26_143301) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "attendances", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "attendee_id"
-    t.integer "attended_event_id"
+    t.bigint "attendee_id"
+    t.bigint "attended_event_id"
     t.index ["attended_event_id"], name: "index_attendances_on_attended_event_id"
     t.index ["attendee_id"], name: "index_attendances_on_attendee_id"
   end
@@ -27,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_26_143301) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 

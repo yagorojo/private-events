@@ -1,6 +1,7 @@
 .box {
   padding: 2rem;
   border: 1px solid #2e374d1a;
+  border-radius: 8px;
 
   display: grid;
   grid-template-rows: repeat(4, 1fr);
